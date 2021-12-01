@@ -1,33 +1,40 @@
-const colors = require('tailwindcss/');
+const COLORS = {
+  MAIN: '#050005',
+  FRAME: '#1c3d46',
+  GREY: '#474c52',
+  PURPLE: '#4D194D',
+  WHITE: '#E9ECEF',
+  GREEN: '#006466',
+};
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      main: '#050005',
-      frame: '#1c3d46',
-      grey: '#474c52',
-      purple: '#4D194D',
-      white: '#E9ECEF',
+      main: COLORS.MAIN,
+      frame: COLORS.FRAME,
+      grey: COLORS.GREY,
+      purple: COLORS.PURPLE,
+      white: COLORS.WHITE,
       fontFamily: {
         lora: 'Lora, serif',
       },
     },
     backgroundColor: (theme) => ({
       ...theme('colors'),
-      main: '#050005',
+      main: COLORS.MAIN,
     }),
-    textColor: (theme) => theme('colors'),
-    textColor: {
-      grey: '#474c52',
-      white: '#E9ECEF',
-      green: '#006466',
-    },
+    textColor: (theme) => ({
+      ...theme('colors'),
+      grey: COLORS.GREY,
+      white: COLORS.WHITE,
+      green: COLORS.GREEN,
+    }),
     borderColor: (theme) => ({
       ...theme('colors'),
-      white: '#E9ECEF',
-      green: '#006466',
+      white: COLORS.WHITE,
+      green: COLORS.GREEN,
     }),
   },
   variants: {
