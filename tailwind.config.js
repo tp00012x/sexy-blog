@@ -1,7 +1,8 @@
 const COLORS = {
   MAIN: '#050005',
   FRAME: '#1c3d46',
-  GREY: '#474c52',
+  GRAY: '#474c52',
+  DARKGRAY: '#171717',
   PURPLE: '#4D194D',
   WHITE: '#E9ECEF',
   GREEN: '#006466',
@@ -14,7 +15,7 @@ module.exports = {
     extend: {
       main: COLORS.MAIN,
       frame: COLORS.FRAME,
-      grey: COLORS.GREY,
+      gray: COLORS.GRAY,
       purple: COLORS.PURPLE,
       white: COLORS.WHITE,
       fontFamily: {
@@ -24,10 +25,12 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme('colors'),
       main: COLORS.MAIN,
+      gray: COLORS.GRAY,
+      darkgray: COLORS.DARKGRAY,
     }),
     textColor: (theme) => ({
       ...theme('colors'),
-      grey: COLORS.GREY,
+      gray: COLORS.GRAY,
       white: COLORS.WHITE,
       green: COLORS.GREEN,
     }),
